@@ -4,6 +4,8 @@ import webbrowser
 import base64
 import os
 import sys
+import random
+import string
 from s3_upload import S3Uploader
 
 
@@ -85,6 +87,12 @@ def XeroRefreshToken(refresh_token):
     
     return [json_response['access_token'], json_response['refresh_token']]
 
+
+def get_random_string(length):
+    letters = string.ascii_lowercase
+    result_str = ''.join(random.choice(letters) for i in range(length))
+    return result_str
+
 def XeroRequests(access_token, tenant_id, source_folder_name):
     
     get_url = 'https://api.xero.com/api.xro/2.0/Invoices'
@@ -97,7 +105,7 @@ def XeroRequests(access_token, tenant_id, source_folder_name):
     json_response = response.json()
     print(json_response)
     
-    xero_output = open( source_folder_name + '/xero_output.json', 'w')
+    xero_output = open( source_folder_name + '/' + get_random_string(8) + '.json', 'w')
     xero_output.write(response.text)
     xero_output.close()
 
