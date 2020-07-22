@@ -5,6 +5,7 @@ Loads accounting files from Xero to a S3 bucket
 1.  AWS credetials are present at ~/.aws/credentials
 2.  pip3 install -r requirements.txt
 3.  python3 xero.py <xero_client_id> <xero_token> <xero_scope>  <source_folder_name>  <s3_bucket_name>
+    You can pickup Xero scopes from this list : https://developer.xero.com/documentation/oauth2/scopes
 
 You will get to see the invoice (a sample) from Xero
 
