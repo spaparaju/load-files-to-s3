@@ -1,5 +1,5 @@
 # Purpose
-Loads files from a source directory to a S3 bucket
+Loads accounting files from Xero to a S3 bucket
 
 # Usage
 1.  AWS credetials are present at ~/.aws/credentials
